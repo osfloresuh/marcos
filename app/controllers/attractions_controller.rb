@@ -27,7 +27,6 @@ class AttractionsController < ApplicationController
   def create
     @attraction = current_user.attractions.build(attraction_params)
     @attraction.category_id = params[:category_id]
-    @attraction.item_img = params[:item_img]
 
     if @attraction.save
       redirect_to root_path
